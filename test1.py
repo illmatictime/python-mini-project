@@ -1,10 +1,22 @@
+import random
+
+for i in range(10):
+    x = random.uniform(0, 999)
+    print(int(x))
+
+# Jerry Landeros
+# 3.6.2020
+# Calculates pay based on input of hours and rate
+
 hours = input("Please enter number of hours worked for this week: ")
 rate = input("What is hourly rate? ")
 
 try:
-    hours = float(hours)
-    if hours <= 0:
-        raise
+    while True:
+        hours = float(hours)
+        if hours <= 0:
+            raise
+    pass
 except Exception:
     print("You entered wrong information for hours.")
     quit()

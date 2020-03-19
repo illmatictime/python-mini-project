@@ -1,21 +1,32 @@
 hours = input("Please enter number of hours worked for this week: ")
 rate = input("What is hourly rate? ")
 
-try:
-    hours = float(hours)
-    if hours <= 0:
-        raise
-except Exception:
-    print("You entered wrong information for hours.")
-    quit()
 
-try:
-    rate = float(rate)
-    if rate <= 0:
-        raise
-except Exception:
-    print("You entered wrong rate information.")
-    quit()
+def errorCheckHours(hours):
+    try:
+        hours = float(hours)
+        if hours <= 0:
+            raise
+    except Exception:
+        print("You entered wrong information for hours.")
+        quit()
+
+
+def errorCheckRate(rate):
+    try:
+        rate = float(rate)
+        if rate <= 0:
+            raise
+    except Exception:
+        print("You entered wrong rate information.")
+        quit()
+
+
+errorCheckHours(hours)
+errorCheckRate(rate)
+
+hours = float(hours)
+rate = float(rate)
 
 if 0 < hours <= 40:
     pay = hours * rate
