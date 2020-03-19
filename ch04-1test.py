@@ -3,8 +3,8 @@ rate = input("What is hourly rate? ")
 
 
 def CalPay(hours, rate):
-    errorCheckPositiveFloat(hours, "Hours input incorrect!")
-    errorCheckPositiveFloat(rate, "Rate input incorrect!")
+    errorCheckPositiveFloat(hours, "You entered wrong information for hours.")
+    errorCheckPositiveFloat(rate, "You entered wrong rate information.")
     hours = float(hours)
     rate = float(rate)
 
