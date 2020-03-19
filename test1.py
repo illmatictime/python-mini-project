@@ -4,10 +4,6 @@ for i in range(10):
     x = random.uniform(0, 999)
     print(int(x))
 
-# Jerry Landeros
-# 3.6.2020
-# Calculates pay based on input of hours and rate
-
 hours = input("Please enter number of hours worked for this week: ")
 rate = input("What is hourly rate? ")
 
