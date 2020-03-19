@@ -1,8 +1,3 @@
-# Jerry Landeros
-# 3.6.2020
-# Program that accepts user input in seconds
-# Takes input and converts to hours:minutes:seconds
-
 seconds = input("Enter the elapsed time in seconds: ")
 print("The elapsed time in seconds = " + seconds)
 
