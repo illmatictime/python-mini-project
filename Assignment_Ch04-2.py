@@ -4,17 +4,10 @@ cUser = input("Please enter the third integer: ")
 
 
 # Compare Inputs
-
-inputSorted = ""
-
-
 def compareInput(aUser, bUser, cUser):
-    integerCheck(aUser)
-    integerCheck(bUser)
-    integerCheck(cUser)
-    aUser = int(aUser)
-    bUser = int(bUser)
-    cUser = int(cUser)
+    aUser = integerCheck(aUser)
+    bUser = integerCheck(bUser)
+    cUser = integerCheck(cUser)
 
     if aUser >= bUser and bUser >= cUser:
         inputSorted = str(cUser)+" "+str(bUser)+" "+str(aUser)
@@ -35,15 +28,15 @@ def compareInput(aUser, bUser, cUser):
 
 def integerCheck(value):
     try:
-        value = int(value)
+        return int(value)
     except Exception:
         print("Please input a valid Integer!")
         quit()
 
 
 def printResults(inputSorted):
-    print("Input three integer numbers in ascending order::\n" + inputSorted)
+    print("Input three integer numbers in ascending order:\n", inputSorted)
 
 
+inputSorted = compareInput(aUser, bUser, cUser)
 printResults(inputSorted)
-compareInput(aUser, bUser, cUser)
