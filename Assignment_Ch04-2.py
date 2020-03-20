@@ -35,7 +35,7 @@ def integerCheck(value):
 
 
 def printResults(inputSorted):
-    print("Input three integer numbers in ascending order:\n", inputSorted)
+    print("Input three integer numbers in ascending order:\n" + inputSorted)
 
 
 inputSorted = compareInput(aUser, bUser, cUser)
