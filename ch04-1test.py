@@ -12,10 +12,10 @@ def CalPay(hours, rate):
         pay = hours * rate
         print("Your pay for this week:", hours * rate)
     elif 40 < hours <= 60:
-        pay = ((hours*rate) + ((hours - 40)*rate*.5))
+        pay = (hours * rate) + ((hours - 40) * rate * 0.5)
         print("Your pay for this week:", pay)
     elif hours > 60:
-        pay = ((hours*rate) + (20 * rate * .5) + ((hours-60) * rate))
+        pay = (hours * rate) + (20 * rate * 0.5) + ((hours - 60) * rate)
         print("Your pay for this week:", pay)
     else:
         print("SHOULD NEVER GET HERE.")

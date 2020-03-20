@@ -6,7 +6,7 @@ secondNumber = int(input("Please enter the second number: "))
 thirdNumber = int(input("Please enter the third number: "))
 
 total = firstNumber + secondNumber + thirdNumber
-average = (firstNumber + secondNumber + thirdNumber)/3
+average = (firstNumber + secondNumber + thirdNumber) / 3
 
 print("Total of those three numbers is:", total)
 print("Average of those three numbers is: ", average)
