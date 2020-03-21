@@ -1,16 +1,16 @@
 print("Enter [R]ock, [P]aper, or [S]cissor")
-player1 = input("Player 1:")
+player1 = input("Player 1: ")
 
 print("Enter [R]ock, [P]aper, or [S]cissor")
-player2 = input("Player 2:")
+player2 = input("Player 2: ")
 
 
 try:
     validInput = ["r", "R", "p", "P", "s", "S"]
     if player1 not in validInput:
         raise
-        if player2 not in validInput:
-            raise
+    elif player2 not in validInput:
+        raise
 except Exception:
     print("Invalid Input")
     quit()
