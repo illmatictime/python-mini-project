@@ -14,21 +14,20 @@ def paperCoversRock(player):
 
 
 def rockSmashesScissor(player):
-    print("Rock smashes scissor.\n" + "Player", player + "WINS!")
+    print("Rock smashes scissor.\n" + "Player", player, "WINS!")
 
 
 def scissorCutsPaper(player):
-    print("Scissors cut paper.\n" + "Player", player + "WINS!")
+    print("Scissors cut paper.\n" + "Player", player, "WINS!")
 
 
-def inputChecker(player1):
+def inputChecker(player):
     try:
         validInput = ["r", "R", "p", "P", "s", "S"]
-        if player1 not in validInput:
+        if player not in validInput:
             raise
     except Exception:
         print("Invalid Input")
-        quit()
 
 
 def rockPaperScissor(player1, player2):
