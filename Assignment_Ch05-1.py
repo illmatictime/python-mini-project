@@ -1,3 +1,27 @@
+def errorCheckHours():
+    while True:
+        try:
+            hours = input("Please enter number of hours worked for this week: ")
+            hours = float(hours)
+            if hours <= 0:
+                raise
+            return hours
+        except Exception:
+            print("You entered wrong information for hours.")
+
+
+def errorCheckRate():
+    while True:
+        try:
+            rate = input("What is hourly rate? ")
+            rate = float(rate)
+            if rate <= 0:
+                raise
+            return rate
+        except Exception:
+            print("You entered wrong rate information.")
+
+
 def CalPay(hours, rate):
     hours = float(hours)
     rate = float(rate)
@@ -16,31 +40,10 @@ def CalPay(hours, rate):
         quit()
 
 
-def errorCheckHours():
-    while True:
-        try:
-            hours = input("Please enter number of hours worked for this week: ")
-            hours = float(hours)
-            if hours <= 0:
-                raise
-            errorCheckRate()
-            break
-        except Exception:
-            print("You entered wrong information for hours.")
-            errorCheckHours()
-
-
-def errorCheckRate():
-    while True:
-        try:
-            rate = input("What is hourly rate? ")
-            rate = float(rate)
-            if rate <= 0:
-                raise
-            break
-        except Exception:
-            print("You entered wrong rate information.")
-            errorCheckRate()
-
-
-errorCheckHours()
+while True:
+    hours = errorCheckHours()
+    rate = errorCheckRate()
+    CalPay(hours, rate)
+    repeat = input("Run the program again? (Q to quit, any key to continue)")
+    if repeat.upper() == "Q":
+        quit()
