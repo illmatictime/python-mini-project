@@ -40,14 +40,25 @@ def printPay(pay):
     print("==========================================================")
 
 
-while True:
-    hours = errorCheckHours()
-    rate = errorCheckRate()
-    pay = CalPay(hours, rate)
-    printPay(pay)
+def calculator():
+    while True:
+        hours = errorCheckHours()
+        rate = errorCheckRate()
+        pay = CalPay(hours, rate)
+        printPay(pay)
+        repeatCalc()
+
+
+def repeatCalc():
     repeat = input("Do you want another pay calculation? (y or n) ")
     if repeat.upper() == "Y":
-        continue
+        calculator()
     elif repeat.upper() == "N":
         print("Good bye!")
         quit()
+    else:
+        print("Please enter y or n.")
+        repeatCalc()
+
+
+calculator()
