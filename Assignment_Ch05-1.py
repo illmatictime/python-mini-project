@@ -31,7 +31,7 @@ def CalPay(hours, rate):
         pay = hours * rate
     elif 40 < hours <= 60:
         pay = (hours * rate) + ((hours - 40) * rate * 0.5)
-    elif hours > 60:
+    elif 60 < hours and hours < 168:
         pay = (hours * rate) + (20 * rate * 0.5) + ((hours - 60) * rate)
     return pay
 
