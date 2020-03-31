@@ -1,7 +1,8 @@
 def errorCheckHours():
     while True:
         try:
-            hours = input("Please enter number of hours worked for this week: ")
+            hours = input(
+                "Please enter number of hours worked for this week: ")
             hours = float(hours)
             if hours <= 0 or hours > 168:
                 raise
@@ -30,7 +31,7 @@ def CalPay(hours, rate):
         pay = hours * rate
     elif 40 < hours <= 60:
         pay = (hours * rate) + ((hours - 40) * rate * 0.5)
-    elif 60 < hours >= 168:
+    elif hours > 60:
         pay = (hours * rate) + (20 * rate * 0.5) + ((hours - 60) * rate)
     return pay
 
