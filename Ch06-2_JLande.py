@@ -1,16 +1,17 @@
 def stringFinder():
-    myString = input("Enter a string with two " + "!" +
-                     "surrounding of the string: ")
     while True:
         try:
+            myString = input("Enter a string with two " + "!" +
+                             "surrounding of the string: ")
             number1 = myString.find("!")
             number2 = myString.rfind("!")
+            if number1 == number2:
+                raise
             newString = myString[number1 + 1: number2]
             word = newString[len(newString):: -1]
-            break
+            return word
         except Exception:
             print("Please enter a string with a word surrounded by !!:")
-    return word
 
 
 def stringPrinter(word):
