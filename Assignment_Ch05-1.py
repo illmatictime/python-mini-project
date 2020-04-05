@@ -1,13 +1,12 @@
 def errorCheckHours():
     while True:
         try:
-            hours = input(
-                "Please enter number of hours worked for this week: ")
+            hours = input("Please enter number of hours worked for this week: ")
             hours = float(hours)
             if hours <= 0 or hours > 168:
                 raise
             return hours
-        except Exception:
+        except ValueError:
             print("You entered wrong information for hours.")
 
 
@@ -19,7 +18,7 @@ def errorCheckRate():
             if rate <= 0:
                 raise
             return rate
-        except Exception:
+        except ValueError:
             print("You entered wrong rate information.")
 
 
@@ -42,12 +41,11 @@ def printPay(pay):
 
 
 def calculator():
-    while True:
-        hours = errorCheckHours()
-        rate = errorCheckRate()
-        pay = CalPay(hours, rate)
-        printPay(pay)
-        repeatCalc()
+    hours = errorCheckHours()
+    rate = errorCheckRate()
+    pay = CalPay(hours, rate)
+    printPay(pay)
+    repeatCalc()
 
 
 def repeatCalc():

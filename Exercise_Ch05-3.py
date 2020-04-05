@@ -1,4 +1,4 @@
-thelist = [3, 8, 5, 1, 4, 9, 2, 10, 7]
+theList = [3, 8, 5, 1, 4, 9, 2, 10, 7]
 
 
 def evenOdd(value):
@@ -35,7 +35,7 @@ def printResults(even, odd, largest, smallest):
     print("Smallest number in the list is: {:>3}".format(smallest))
 
 
-odd, even = evenOdd(thelist)
-largest = maxInteger(thelist)
-smallest = minInteger(thelist)
+odd, even = evenOdd(theList)
+largest = maxInteger(theList)
+smallest = minInteger(theList)
 printResults(even, odd, largest, smallest)

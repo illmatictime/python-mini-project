@@ -13,7 +13,7 @@ def sixIntegers():
                 even = even + six
             elif (six % 2) == 1:
                 odd = odd + six
-        except Exception:
+        except ValueError:
             print("Try again, not a valid Integer!")
     return even, odd
 
@@ -24,10 +24,9 @@ def printResults(even, odd):
 
 
 def calculator():
-    while True:
-        even, odd = sixIntegers()
-        printResults(even, odd)
-        repeatCalc()
+    even, odd = sixIntegers()
+    printResults(even, odd)
+    repeatCalc()
 
 
 def repeatCalc():
