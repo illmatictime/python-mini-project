@@ -23,7 +23,7 @@ def vowelCounter(files, fileName):
     for letters in files:
         if letters in vowels:
             count = count + 1
-    print(count)
+    print("File", fileName, "has", count, "vowels")
 
 
 def consonantCounter(files, fileName):
@@ -32,7 +32,7 @@ def consonantCounter(files, fileName):
     for letters in files:
         if letters in consonants or letters in consonants.upper():
             count = count + 1
-    print(count)
+    print("File", fileName, "has", count, "consonants")
 
 
 def numCharCounter(files, fileName):
@@ -41,21 +41,28 @@ def numCharCounter(files, fileName):
     for numbers in files:
         if numbers in numChar:
             count = count + 1
-    print(count)
-# vowels = [a, e, i, o, u]
-# print("File fileName has # vowels")
-# # consonants = [b, c, d, f, g, h, j, k, l, m, n, p, q, r, s, t, v, w, x, y, z]
-# print("File fileName has # consonants")
-
-# print("File fileName has # numerical characters")
-
-# print("Do you want to try it again? (y or n)")
-
-# print("Thanks for playing!\n>>>")
+    print("File", fileName, "has", count, "numerical characters")
 
 
-files, fileName = fileOpener()
-lineCounter(files, fileName)
-vowelCounter(files, fileName)
-consonantCounter(files, fileName)
-numCharCounter(files, fileName)
+def repeat():
+    repeatProgram = input("\nDo you want to try it again? (y or n) ")
+    if repeatProgram.upper() == "Y":
+        main()
+    elif repeatProgram.upper() == "N":
+        print("Thanks for playing!\n>>>")
+        quit()
+    else:
+        print("Please enter y or n.")
+        repeat()
+
+
+def main():
+    files, fileName = fileOpener()
+    lineCounter(files, fileName)
+    vowelCounter(files, fileName)
+    consonantCounter(files, fileName)
+    numCharCounter(files, fileName)
+    repeat()
+
+
+main()
