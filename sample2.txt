@@ -1,0 +1,18 @@
+CIS 12, Fall 2019 (Section 75795)
+
+Instructor: Mr. Jason Y. Huh
+     Office: IT212
+     Phone: x7506
+     Email: jyhuh@pasadena.edu (Recommend to use canvas email)
+Class meeting time:
+     Mon. 8:35pm - 10:40pm (R206)
+Office Hours:
+  Mon. : 5:15PM - 6:15PM (R206)
+   Wed. : 5:00PM - 6:30PM (IT212)
+  Thur. : 9:30AM - 11:30AM (Online)
+   Sat.   : 8:00AM-9:00AM (IT212)
+Textbook:
+     Python for Everybody: Exploring Data in Python 3
+     ISBN-10: 9781530051120
+     ISBN-13: 978-1530051120
+     Or PDF version of the book can be downloaded from this link:

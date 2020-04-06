@@ -1,0 +1,16 @@
+Course Objectives:
+
+By the end of the class, students will be able to:
+
+ a. Identify basic programming concepts. 
+ b. Demonstrate and understand the basic building blocks of a program. 
+ c. Describe program development lifecycle. 
+ d. Demonstrate a basic understanding and uses of Machine, Assembly, High-Level, Database,Scripting and Web Page Programming languages. 
+e. Use primitive data types and data structures offered by the development environment. 
+f. Choose an appropriate data structure for modeling a simple problem. 
+g. Write simple applications that relate to a specific domain. 
+h. Design, implement, test, and debug a program that uses each of the following fundamentalprogramming constructs: basic computation, simple I/O, standard conditional and iterative structures,and the definition of functions. 
+i. Test applications with sample data. 
+j. Apply core program control structures. 
+k. Create simple web pages using HTML and CSS. 
+l. Create simple databases using SQL.
