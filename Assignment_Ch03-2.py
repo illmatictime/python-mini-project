@@ -11,7 +11,6 @@ except Exception:
     print("Not a valid input")
     quit()
 
-
 if a >= b and b >= c:
     print("Input three integer numbers in ascending order:")
     print(c, b, a)

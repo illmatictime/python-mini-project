@@ -9,39 +9,63 @@ def fileOpener():
             print("File cannot be opened: ", fileName)
 
 
-def lineCounter(files, fileName):
-    count = 1
-    for lines in files:
-        if lines in "\n":
-            count = count + 1
-    print("File", fileName, "has", count, "lines")
-
-
-def vowelCounter(files, fileName):
-    count = 0
+def Counter(files, fileName):
+    lineCount = 0
+    countVowels = 0
+    countConsonants = 0
+    countNumbers = 0
     vowels = "aeiouAEIOU"
-    for letters in files:
-        if letters in vowels:
-            count = count + 1
-    print("File", fileName, "has", count, "vowels")
-
-
-def consonantCounter(files, fileName):
-    count = 0
     consonants = "bcdfghjklmnpqrstvwxyz"
-    for letters in files:
-        if letters in consonants or letters in consonants.upper():
-            count = count + 1
-    print("File", fileName, "has", count, "consonants")
-
-
-def numCharCounter(files, fileName):
-    count = 0
     numChar = "0123456789"
-    for numbers in files:
-        if numbers in numChar:
-            count = count + 1
-    print("File", fileName, "has", count, "numerical characters")
+    for x in open(fileName):
+        lineCount += 1
+    for x in files:
+        if x in vowels:
+            countVowels += 1
+        elif x in consonants or x in consonants.upper():
+            countConsonants += 1
+        elif x in numChar:
+            countNumbers += 1
+    return fileName, lineCount, countVowels, countConsonants, countNumbers
+
+
+def printResults(fileName, lineCount, countVowels, countConsonants,
+                 countNumbers):
+    print("File", fileName, "has", lineCount, "lines")
+    print("File", fileName, "has", countVowels, "vowels")
+    print("File", fileName, "has", countConsonants, "consonants")
+    print("File", fileName, "has", countNumbers, "numerical characters")
+
+
+# def lineCounter(fileName):
+#     lines = 0
+#     for line in open(fileName):
+#         lines += 1
+#     print("File", fileName, "has", lines, "lines")
+
+# def vowelCounter(files, fileName):
+#     count = 0
+#     vowels = "aeiouAEIOU"
+#     for letters in files:
+#         if letters in vowels:
+#             count = count + 1
+#     print("File", fileName, "has", count, "vowels")
+
+# def consonantCounter(files, fileName):
+#     count = 0
+#     consonants = "bcdfghjklmnpqrstvwxyz"
+#     for letters in files:
+#         if letters in consonants or letters in consonants.upper():
+#             count = count + 1
+#     print("File", fileName, "has", count, "consonants")
+
+# def numCharCounter(files, fileName):
+#     count = 0
+#     numChar = "0123456789"
+#     for numbers in files:
+#         if numbers in numChar:
+#             count = count + 1
+#     print("File", fileName, "has", count, "numerical characters")
 
 
 def repeat():
@@ -58,10 +82,14 @@ def repeat():
 
 def main():
     files, fileName = fileOpener()
-    lineCounter(files, fileName)
-    vowelCounter(files, fileName)
-    consonantCounter(files, fileName)
-    numCharCounter(files, fileName)
+    fileName, lineCount, countVowels, countConsonants, countNumbers = Counter(
+        files, fileName)
+    printResults(fileName, lineCount, countVowels, countConsonants,
+                 countNumbers)
+    # lineCounter(fileName)
+    # vowelCounter(files, fileName)
+    # consonantCounter(files, fileName)
+    # numCharCounter(files, fileName)
     repeat()
 
 

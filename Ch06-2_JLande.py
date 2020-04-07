@@ -2,7 +2,8 @@ def stringFinder(counter):
     try:
         if counter == 0:
             myString = input(
-                'Enter a string with two "!" surrounding portion of the string: ')
+                'Enter a string with two "!" surrounding portion of the string: '
+            )
         else:
             myString = input(
                 "Please enter a string with a word surrounded by !!: ")
@@ -10,8 +11,8 @@ def stringFinder(counter):
         number2 = myString.rfind("!")
         if number1 == number2:
             raise
-        newString = myString[number1 + 1: number2]
-        word = newString[len(newString):: -1]
+        newString = myString[number1 + 1:number2]
+        word = newString[len(newString)::-1]
         if word == "":
             raise
         return word

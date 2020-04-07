@@ -4,7 +4,6 @@ player1 = input("Player 1: ")
 print("Enter [R]ock, [P]aper, or [S]cissor")
 player2 = input("Player 2: ")
 
-
 try:
     validInput = ["r", "R", "p", "P", "s", "S"]
     if player1 not in validInput:

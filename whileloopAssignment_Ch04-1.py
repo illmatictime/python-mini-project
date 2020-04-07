@@ -9,7 +9,6 @@ while True:
         print("You entered wrong information for hours.")
         print("Try again!")
 
-
 while True:
     try:
         rate = input("What is hourly rate? ")
@@ -20,7 +19,6 @@ while True:
     except Exception:
         print("You entered wrong rate information.")
         print("Try again!")
-
 
 if 0 < hours <= 40:
     pay = hours * rate
