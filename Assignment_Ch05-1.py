@@ -5,10 +5,10 @@ def errorCheckHours():
                 "Please enter number of hours worked for this week: ")
             hours = float(hours)
             if hours <= 0 or hours > 168:
-                raise
+                raise ValueError
             return hours
         except ValueError:
-            print("You entered wrong information for hours.")
+            print("You entered wrong information for number of hours.")
 
 
 def errorCheckRate():
@@ -19,8 +19,8 @@ def errorCheckRate():
             if rate <= 0:
                 raise ValueError
             return rate
-        except Exception:
-            print("You entered wrong rate information.")
+        except ValueError:
+            print("You entered improper information for the rate.")
 
 
 def CalPay(hours, rate):
@@ -31,7 +31,7 @@ def CalPay(hours, rate):
         pay = hours * rate
     elif 40 < hours <= 60:
         pay = (hours * rate) + ((hours - 40) * rate * 0.5)
-    elif 60 < hours and hours < 168:
+    elif 60 < hours and hours <= 168:
         pay = (hours * rate) + (20 * rate * 0.5) + ((hours - 60) * rate)
     return pay
 

@@ -5,8 +5,8 @@ def fileOpener():
             fileOpen = open(fileName)
             files = fileOpen.read()
             return files, fileName
-        except IOError:
-            print("File cannot be opened: ", fileName)
+        except IOError:  # except IOError as error: print("File cannot be opened: ", error)
+            print("File cannot be opened: ")
 
 
 def Counter(files, fileName):
@@ -17,8 +17,10 @@ def Counter(files, fileName):
     vowels = "aeiouAEIOU"
     consonants = "bcdfghjklmnpqrstvwxyz"
     numChar = "0123456789"
+
     for x in open(fileName):
         lineCount += 1
+
     for x in files:
         if x in vowels:
             countVowels += 1
@@ -73,7 +75,7 @@ def repeat():
     if repeatProgram.upper() == "Y":
         main()
     elif repeatProgram.upper() == "N":
-        print("Thanks for playing!\n>>>")
+        print("Thanks for playing!")
         quit()
     else:
         print("Please enter y or n.")
