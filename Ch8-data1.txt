@@ -1,0 +1,3 @@
+Programmers add an operating system and a set of applications to the hardware
+and we end up with a Personal Digital Assistant that is quite helpful and capable
+of helping us do many different things.
