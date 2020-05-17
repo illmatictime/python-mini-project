@@ -4,34 +4,27 @@ def openFile():
         try:
             fileName = input("Enter file name: ")
             fileOpen = open(fileName)
-            return fileOpen, fileName
+            fileOpen = fileOpen.read()
+            return fileName, fileOpen
         except IOError:
-            print("File not found, please enter correct file name.")
+            print("File not found, please enter correct file name.\n")
+            
 
-def Counter(fileOpen, fileName):
-    wordCount = 0
+def Counter(fileOpen):
     wordList = []
-    newWordList = []
-    for x in open(fileName):
-        x = x.lower()
-        x = x.split()
-        wordList.extend(x)
-        # wordList = list(set(wordList))
-        wordList.sort()
-        
-    print(wordList)
-    print(len(wordList))
-    for x in wordList:
-        if x not in newWordList:
-            newWordList.extend(x)
-    print("newWordList:",newWordList)
-    wordCount = len(wordList)
-    
-    return wordCount, wordList
+    fileOpen = fileOpen.split()
 
-def printResults(fileName, wordCount, wordList):
+    for word in fileOpen:
+        word = word.lower()
+        if word not in wordList:
+            wordList.append(word)
+            wordList.sort()
+    return wordList
+
+def printResults(fileName, wordList):
+    print()
     print(wordList)
-    print("File", fileName, "has", wordCount, "different words.")
+    print("\nFile", fileName, "has", len(wordList), "different words.")
 
 
 def repeat():
@@ -39,22 +32,19 @@ def repeat():
     if repeatProgram.upper() == "Y":
         pass
     elif repeatProgram.upper() == "N":
-        print("Thank you for playing.")
+        print("\n\nThank you for playing.")
         return True
         # quit()
     else:
         print("Please enter y or n.")
         repeat()
 
+
 def main():
     while True:
-        fileOpen, fileName = openFile()
-        wordCount, wordList = Counter(fileOpen, fileName)
-        printResults(fileName, wordCount, wordList)
-        # lineCounter(fileName)
-        # vowelCounter(files, fileName)
-        # consonantCounter(files, fileName)
-        # numCharCounter(files, fileName)
+        fileName, fileOpen = openFile()
+        wordList = Counter(fileOpen)
+        printResults(fileName, wordList)
         result = repeat()
         if result == True:
             break
