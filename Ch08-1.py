@@ -2,20 +2,35 @@
 def openFile():
     while True:
         try:
-            fileName = input("Enter file name:")
+            fileName = input("Enter file name: ")
             fileOpen = open(fileName)
             return fileOpen, fileName
         except IOError:
             print("File not found, please enter correct file name.")
 
-def Counter(fileOpen):
+def Counter(fileOpen, fileName):
     wordCount = 0
-    for x in fileOpen:
+    wordList = []
+    newWordList = []
+    for x in open(fileName):
+        x = x.lower()
         x = x.split()
+        wordList.extend(x)
+        # wordList = list(set(wordList))
+        wordList.sort()
+        
+    print(wordList)
+    print(len(wordList))
+    for x in wordList:
+        if x not in newWordList:
+            newWordList.extend(x)
+    print("newWordList:",newWordList)
+    wordCount = len(wordList)
     
-    return x, wordCount
+    return wordCount, wordList
 
-def printResults(fileName, wordCount):
+def printResults(fileName, wordCount, wordList):
+    print(wordList)
     print("File", fileName, "has", wordCount, "different words.")
 
 
@@ -34,8 +49,8 @@ def repeat():
 def main():
     while True:
         fileOpen, fileName = openFile()
-        wordCount = Counter(fileOpen)
-        printResults(fileName, wordCount)
+        wordCount, wordList = Counter(fileOpen, fileName)
+        printResults(fileName, wordCount, wordList)
         # lineCounter(fileName)
         # vowelCounter(files, fileName)
         # consonantCounter(files, fileName)
