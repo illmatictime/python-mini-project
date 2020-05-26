@@ -4,21 +4,25 @@ def openFile():
             fileName = input("Please enter file name to process: ")
             fileOpen = open(fileName)
             fileOpen = fileOpen.read()
-            return fileName, fileOpen
+            return fileOpen
         except IOError:
-            print("File name", fileName, "doesn't exist.")
+            print("File name", fileName, "cannot be found.")
 
 
 def Counter(fileOpen):
     wordList = dict()
+    fileOpen = fileOpen.split()
 
     for word in fileOpen:
+        word = word.lower()
+        word = word.strip("[]!,().#'[]:;?")
         wordList[word] = wordList.get(word, 0) + 1
     return wordList
 
 
-def printResults(fileName, wordList):
-    print(wordList)
+def printResults(wordList):
+    for k, v in sorted(wordList.items()):
+        print(k, v)
 
 
 def repeat():
@@ -36,9 +40,9 @@ def repeat():
 
 def main():
     while True:
-        fileName, fileOpen = openFile()
+        fileOpen = openFile()
         wordList = Counter(fileOpen)
-        printResults(fileName, wordList)
+        printResults(wordList)
         result = repeat()
         if result == True:
             break
