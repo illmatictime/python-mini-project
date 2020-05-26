@@ -13,6 +13,7 @@ def Counter(fileOpen):
     wordList = dict()
 
     for word in fileOpen:
+        word = word.strip("\n")
         wordList[word] = wordList.get(word, 0) + 1
     return wordList
 
