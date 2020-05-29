@@ -1,0 +1,4 @@
+You'll see that we have two for loops. The outer "loop" is reading the lines of the
+file, and the inner 'loop' is iterating through each of the words on that particular
+line. This is an example of a pattern called "nested loops" because one of the loops
+is the "outer loop" and the other loop is the "inner loop".
