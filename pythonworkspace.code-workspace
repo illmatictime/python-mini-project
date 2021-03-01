@@ -6,6 +6,7 @@
   ],
   "settings": {
     "python.formatting.provider": "yapf",
+    "python.pythonPath": "C:\\Program Files\\Python39\\python.exe",
     
   }
 }
