@@ -26,10 +26,8 @@ def daysMonth(year, month):
         days = 30
     elif leapYear(year):
         days = 29
-        print("leap year")
-    elif leapYear(False):
+    elif not leapYear(year):
         days = 28
-        print("not a leap year")
 
     return days
 

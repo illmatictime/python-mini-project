@@ -1,6 +1,6 @@
 import turtle
 
-#myScreen = turtle.getscreen()
+# myScreen = turtle.getscreen()
 
 
 def movePen(theTurtle):
@@ -14,7 +14,7 @@ def movePen(theTurtle):
 
 def createSquare(theTurtle, length):
     for x in range(4):
-        theTurtle.forward(length)  #creates the square
+        theTurtle.forward(length)  # creates the square
         theTurtle.right(90)
 
 
